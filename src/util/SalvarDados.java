@@ -1,10 +1,6 @@
 package util;
 
-import util.*;
 import modelo.*;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList ;
 import java.util.List;
 
@@ -37,7 +33,7 @@ public class SalvarDados {
 
                 if (f instanceof Casa) {
                     //Casa
-                    this.cabecalho = new String[]{"Nome", "ValorImovel", "ValorFinanciamento", "TamanhoImovel"};
+                    cabecalho = new String[]{"Nome", "ValorImovel", "ValorFinanciamento", "TamanhoImovel"};
                     dados.add(new String[]{
                             String.valueOf(nome),
                             String.valueOf(valorimovel),
