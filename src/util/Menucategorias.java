@@ -1,8 +1,6 @@
 package util;
-import main.Main;
 import modelo.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -54,7 +52,6 @@ public class Menucategorias {
 
                     Financiamento Ap = new Apartamento(Ativos.taxa, Ativos.prazo, Ativos.valor, Ativos.nomeCliente, vagasGaragem, numeroAndar);
                     financiamentos.add(Ap);
-                    System.out.println(financiamentos);
 
 
                     break;
@@ -63,7 +60,7 @@ public class Menucategorias {
                     // opção terreno:
                     System.out.println("===========================\n" +
                             "Digite a zona do terreno. Ex: Zona Rural.");
-                    this.zonaTerreno = scanner.nextLine();
+                    zonaTerreno = scanner.nextLine();
                     Financiamento terreno = new Terreno(Ativos.taxa, Ativos.prazo, Ativos.valor, Ativos.nomeCliente, zonaTerreno);
                     financiamentos.add(terreno);
 
@@ -77,11 +74,18 @@ public class Menucategorias {
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
-            System.out.println("Financiamento criado com sucesso!");
+            System.out.println("Financiamento criado com sucesso!"+
+                                "\n=====================\n");
             this.verificador = true;
 
 
+        }try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            System.err.println("O timer1 foi interrompidoa.");
+            e.getStackTrace();
         }
+        
         Imprimir();
         SalvarDados Salvar = new SalvarDados();
         Salvar.dadosFinanciamentos.addAll(financiamentos);
@@ -108,18 +112,44 @@ public class Menucategorias {
         double totalFinanciamentos = 0;
 
         for (Financiamento f1 : financiamentos) {
+            if (f1 instanceof Casa) {
             System.out.println("Nome do Cliente: " + f1.getNome() +
-                    "\nValor do Imóvel: R$ " + String.format("%.2f", f1.getValorImovel()) +
+                    "\nValor da Casa: R$ " + String.format("%.2f", f1.getValorImovel()) +
                     "\nValor do Financiamento: R$ " + String.format("%.2f", f1.getvalorfinanciamento()) +
-                    "\nMetragem do Imóvel: " + String.format("%.2f", f1.getTamanhoImovel()) + "m²");
+                    "\nMetragem do Imóvel: " + String.format("%.2f", f1.getTamanhoImovel()) + "m²"+
+                    "\n==========================\n\n");
+            
+                }else if (f1 instanceof Apartamento) {
+                    System.out.println("Nome do Cliente: " + f1.getNome() +
+                    "\nValor do Apartamento: R$ " + String.format("%.1f", f1.getValorImovel()) +
+                    "\nValor do Financiamento: R$ " + String.format("%.1f", f1.getvalorfinanciamento()) +
+                    "\nMetragem do Imóvel: " + String.format("%.1f", f1.getTamanhoImovel()) + "m²"+
+                    "\nVagas: " + f1.getVagasGaragem()+
+                    "\nAndar do Apartamento: "+ f1.getAndarAp()+
+                    "\n==========================\n\n");
+
+                }else if (f1 instanceof Terreno) {
+                    System.out.println("Nome do Cliente: " + f1.getNome() +
+                    "\nValor do Terreno: R$ " + String.format("%.2f", f1.getValorImovel()) +
+                    "\nValor do Financiamento: R$ " + String.format("%.2f", f1.getvalorfinanciamento()) +
+                    "\nMetragem do Imóvel: " + String.format("%.2f", f1.getTamanhoImovel()) + "m²"+
+                    "\nZona do Terreno: " + String.format("%.2f", f1.getVagasGaragem())+
+                    "\n==========================\n\n");
+                }
+
 
             SomaValorImoveis += f1.getValorImovel();
             totalFinanciamentos += f1.getvalorfinanciamento();
+            
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                System.err.println("O timer2 foi interrompido.");
+                e.getStackTrace();
+            }
 
 
-            System.out.println("\n============================" +
-                    "\nSoma de todos os imóveis sem juros: " + String.format("%.2f", SomaValorImoveis) +
-                    "\nSoma de todos os imóveis somados de juros: " + String.format("%.2f", totalFinanciamentos));
+           
         }
     }
 }
