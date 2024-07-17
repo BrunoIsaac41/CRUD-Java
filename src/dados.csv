@@ -1,4 +1,4 @@
-Nome,ValorImovel,ValorFinanciamento,TamanhoImovel
+Nome,ValorImovel,ValorFinanciamento,TamanhoImovel, Vagas, Andar
 bruno,120000.0,240000.0,200.0
 Bruno,30000.0,60000.0,200.0,2,3
 bruno,1000002.0,2500005.0000000005,200.0,
