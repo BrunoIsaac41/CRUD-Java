@@ -40,24 +40,32 @@ public class InterfaceUsuario {
 
 
     public void InputTaxaJuros() {
-
+        boolean taxa_verificação = true;
+        while (true){
         try {
-            while (true) {
                 Scanner taxa1 = new Scanner(System.in);
                 System.out.println("===========================\n" +
                         "Digite a taxa anual de juros:");
                 taxa = taxa1.nextDouble();
-                if (taxa <= 0 || taxa > 100) {
-                    throw new RuntimeException("A taxa é inválida\n");
-
-                }
-                break;
+                
+                    
+                    if (taxa <= 0 || taxa > 100) {
+                        System.out.println("Taxa é inválida.\n");
+                        continue;
+                        }
+                    else {
+                        break;
+                    }
+                    
+                 
+                     
+                    
+                }catch (RuntimeException e){
+                    System.out.println(e.getMessage());
+                } 
             }
-        } catch (RuntimeException e){
-            System.out.println(e.getMessage());
-        }
 
-    }
+        }
 
     public void InputPrazoFinanciamento() {
         try {
