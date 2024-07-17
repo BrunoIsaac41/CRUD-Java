@@ -26,6 +26,7 @@ public class InterfaceUsuario {
                     System.out.println("===========================\n"+
                         "Digite o valor do imovél:");
                     valorimovel = inputVimovel.nextDouble();
+                    inputVimovel.close();
                 if  (valorimovel <= 0) {
                     throw new RuntimeException ("O valor é inválido");
                         }
@@ -47,6 +48,7 @@ public class InterfaceUsuario {
                 System.out.println("===========================\n" +
                         "Digite a taxa anual de juros:");
                 taxa = taxa1.nextDouble();
+                taxa1.close();
                 if (taxa <= 0 || taxa > 100) {
                     throw new RuntimeException("A taxa é inválida\n");
 
@@ -66,6 +68,7 @@ public class InterfaceUsuario {
                 System.out.println("===========================\n" +
                         "Digite o Prazo em MESES:");
                 prazo = inputPrazo.nextInt();
+                inputPrazo.close();
 
                 if (prazo <= 0) {throw new RuntimeException("O prazo é inválido\n");}
 
@@ -83,7 +86,9 @@ public class InterfaceUsuario {
         System.out.println("===========================\n" +
                 "Digite a metragem do imovel em metros: ");
         tamanhoImovel = tamanho.nextDouble();
+        tamanho.close();
         return  tamanhoImovel;
+
 }
 
 
