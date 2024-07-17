@@ -5,7 +5,6 @@ import modelo.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import util.*;
 
 
 public class Menucategorias {
@@ -83,14 +82,12 @@ public class Menucategorias {
 
 
         }
-        System.out.println(financiamentos);
         Imprimir();
         SalvarDados Salvar = new SalvarDados();
         Salvar.dadosFinanciamentos.addAll(financiamentos);
         Salvar.salvar();
 
 
-        System.out.println("aa");
 
     }
 
