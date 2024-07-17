@@ -69,7 +69,6 @@ public class SalvarDados {
                     });
                 }toCSV.gerarCSV("dados.csv", dados,cabecalho);
 
-                System.out.println(dados);
 
             }
         } catch (Exception e) {
