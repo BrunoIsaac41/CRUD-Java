@@ -11,6 +11,7 @@ public class InterfaceUsuario {
         protected static double tamanhoImovel;
 
     public String setNomeCliente(){
+        @SuppressWarnings("resource")
         Scanner nomefinan = new Scanner(System.in);
         System.out.println("\n" + "================================\n" +
                 "Digite o nome do cliente: ");
