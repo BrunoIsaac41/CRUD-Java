@@ -1,7 +1,6 @@
 package util;
 
-import modelo.Financiamento;
-import java.util.ArrayList;
+
 
 public class Ativos {
     InterfaceUsuario Inter = new InterfaceUsuario();
