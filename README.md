@@ -1,8 +1,8 @@
 # CRUD-Java
 Um sistema de criação de financiamentos armazenados em CSV. 
  > Feito com a linguagem Java e no momento apenas com bibliotecas base do java.
-Os arquivos estão separados por brainch, cada brainch respectivamente um package.
+Para utilizar, baixar a pasta src, que contém as packages do código.
 
-Baixar a pasta src e abair em alguma Idle, executar a classe Main, dentro do package main.
+>Baixar a pasta src e abair em alguma Idle, executar a classe Main, dentro do package main.
 
 
