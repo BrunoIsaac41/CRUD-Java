@@ -10,6 +10,6 @@
 
 > ### Baixar a pasta src e abrir em alguma Idle, executar a classe Main, dentro do package main.
 
- ## Em breve finalizarei a framework web em Flask para o sistema.
+ ## Em breve construírei a framework para o sistema.
 
 
